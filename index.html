@@ -2165,9 +2165,11 @@ document.querySelectorAll('.card-cs').forEach(slider => {
                 content_category: 'Odontologia Estetica',
                 currency: 'COP'
             });
-            window.open(`https://wa.me/573014855591?text=${encodeURIComponent(msg)}`, '_blank');
-            closeModal();
-            this.reset();
+            setTimeout(() => {
+                window.open(`https://wa.me/573014855591?text=${encodeURIComponent(msg)}`, '_blank');
+                closeModal();
+                this.reset();
+            }, 400);
         });
 
         // Solo números en campo WhatsApp modal
@@ -2212,7 +2214,9 @@ document.querySelectorAll('.card-cs').forEach(slider => {
                 content_category: 'Odontologia Estetica',
                 currency: 'COP'
             });
-            window.open(`https://wa.me/573014855591?text=${encodeURIComponent(msg)}`, '_blank');
+            setTimeout(() => {
+                window.open(`https://wa.me/573014855591?text=${encodeURIComponent(msg)}`, '_blank');
+            }, 400);
         });
 
         // Hamburger menu
