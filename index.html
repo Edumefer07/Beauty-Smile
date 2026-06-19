@@ -2163,11 +2163,7 @@ document.querySelectorAll('.card-cs').forEach(slider => {
                 `Estoy interesado/a en la valoración virtual gratuita.`
             ].join('\n');
 
-            fbq('trackCustom', 'FormularioContacto', {
-                content_name: tratamiento,
-                content_category: 'Odontologia Estetica',
-                currency: 'COP'
-            });
+            fbq('track', 'Contact');
             setTimeout(() => {
                 window.open(`https://wa.me/573014855591?text=${encodeURIComponent(msg)}`, '_blank');
                 closeModal();
@@ -2212,11 +2208,7 @@ document.querySelectorAll('.card-cs').forEach(slider => {
                 `Estoy interesado/a en la valoración virtual gratuita.`
             ].join('\n');
 
-            fbq('trackCustom', 'FormularioContacto', {
-                content_name: tratamiento,
-                content_category: 'Odontologia Estetica',
-                currency: 'COP'
-            });
+            fbq('track', 'Contact');
             setTimeout(() => {
                 window.open(`https://wa.me/573014855591?text=${encodeURIComponent(msg)}`, '_blank');
             }, 400);
