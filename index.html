@@ -1501,6 +1501,15 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="m-ciudad">Ciudad</label>
+                    <select id="m-ciudad" required>
+                        <option value="" disabled selected>Selecciona tu ciudad</option>
+                        <option value="Medellín">Medellín</option>
+                        <option value="Bogotá">Bogotá</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="m-numero">Tu número de WhatsApp</label>
                     <input type="tel" id="m-numero" placeholder="300 000 0000" inputmode="numeric" pattern="[0-9\s]+" required>
                 </div>
@@ -1980,7 +1989,16 @@
                             <option value="menos de $3.000.000">Menos de $3.000.000</option>
                             <option value="entre $3.000.000 y $6.000.000">Entre $3.000.000 y $6.000.000</option>
                             <option value="más de $6.000.000">Más de $6.000.000</option>
-                            </select>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="f-ciudad">Ciudad</label>
+                        <select id="f-ciudad" required>
+                            <option value="" disabled selected>Selecciona tu ciudad</option>
+                            <option value="Medellín">Medellín</option>
+                            <option value="Bogotá">Bogotá</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -2171,6 +2189,7 @@ document.querySelectorAll('.card-cs').forEach(slider => {
             const nombre      = document.getElementById('m-nombre').value.trim();
             const tratamiento = document.getElementById('m-tratamiento').value;
             const presupuesto = document.getElementById('m-presupuesto').value;
+            const ciudad      = document.getElementById('m-ciudad').value;
             const numero      = document.getElementById('m-numero').value.trim();
 
             const msg = [
@@ -2181,6 +2200,7 @@ document.querySelectorAll('.card-cs').forEach(slider => {
                 `*Nombre:* ${nombre}`,
                 `*Tratamiento de interés:* ${tratamiento}`,
                 `*Presupuesto aproximado:* ${presupuesto}`,
+                `*Ciudad:* ${ciudad}`,
                 `*Mi número:* ${numero}`,
                 ``,
                 `Estoy interesado/a en la valoración virtual gratuita.`
@@ -2216,6 +2236,7 @@ document.querySelectorAll('.card-cs').forEach(slider => {
             const nombre      = document.getElementById('f-nombre').value.trim();
             const tratamiento = document.getElementById('f-tratamiento').value;
             const presupuesto = document.getElementById('f-presupuesto').value;
+            const ciudad      = document.getElementById('f-ciudad').value;
             const numero      = document.getElementById('f-numero').value.trim();
 
             const msg = [
@@ -2226,6 +2247,7 @@ document.querySelectorAll('.card-cs').forEach(slider => {
                 `*Nombre:* ${nombre}`,
                 `*Tratamiento de interés:* ${tratamiento}`,
                 `*Presupuesto aproximado:* ${presupuesto}`,
+                `*Ciudad:* ${ciudad}`,
                 `*Mi número:* ${numero}`,
                 ``,
                 `Estoy interesado/a en la valoración virtual gratuita.`
