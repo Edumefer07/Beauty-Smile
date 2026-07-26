@@ -994,6 +994,108 @@
             margin-top: 14px;
         }
 
+        /* ===== FAQ ===== */
+        .faq-section {
+            background: var(--dark-card2);
+            padding: 100px 10%;
+        }
+
+        .faq-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .faq-section .section-tag { justify-content: center; }
+        .faq-section .section-tag::before { display: none; }
+
+        .faq-list {
+            max-width: 820px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--dark-card);
+            margin-bottom: 14px;
+            overflow: hidden;
+            transition: border-color .25s ease;
+        }
+
+        .faq-item.open { border-color: rgba(212, 175, 55, 0.45); }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            padding: 22px 26px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            transition: color .2s ease;
+        }
+
+        .faq-question:hover { color: var(--gold); }
+        .faq-item.open .faq-question { color: var(--gold); }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            position: relative;
+        }
+
+        .faq-icon::before,
+        .faq-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 13px;
+            height: 1.5px;
+            background: var(--gold);
+            transform: translate(-50%, -50%);
+            transition: transform .28s ease;
+        }
+
+        .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+        .faq-item.open .faq-icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease;
+        }
+
+        .faq-answer p {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: var(--text-muted);
+            padding: 0 26px 24px;
+            margin: 0;
+        }
+
+        .faq-cta {
+            text-align: center;
+            margin-top: 44px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .faq-cta a {
+            color: var(--gold);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
         /* ===== CONTACTO ===== */
         .contact-section {
             background: #060606;
@@ -1412,6 +1514,11 @@
             .info-inner { grid-template-columns: 1fr; }
             .info-visual { display: flex; border-left: none; border-top: 1px solid var(--border); padding: 50px 6%; }
             .info-content { padding: 60px 6%; border-right: none; border-bottom: 1px solid var(--border); }
+
+            /* FAQ */
+            .faq-section { padding: 60px 6%; }
+            .faq-question { font-size: 14.5px; padding: 18px 18px; gap: 12px; }
+            .faq-answer p { font-size: 13.5px; padding: 0 18px 20px; }
 
             /* CONTACTO */
             .contact-section { padding: 60px 6%; }
@@ -2136,6 +2243,90 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="faq-header">
+            <div class="section-tag">Resolvemos tus dudas</div>
+            <h2 class="section-title">Preguntas frecuentes</h2>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    ¿El procedimiento duele?
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>No. La mayoría de nuestros tratamientos se realizan sin dolor y sin necesidad de anestesia. Trabajamos con técnicas mínimamente invasivas que respetan tu diente natural, por lo que no hay molestias durante ni después del procedimiento, y puedes retomar tu rutina el mismo día.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    ¿Cuántas citas necesito?
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>Depende del tratamiento. Los diseños en resina de alta estética se completan en una sola sesión. Los tratamientos en porcelana o cerómero requieren entre dos y tres citas, ya que las piezas se fabrican a la medida en laboratorio. En tu valoración te confirmamos el número exacto según tu caso.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    ¿Me van a desgastar los dientes naturales?
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>No. Nuestro enfoque es conservador: cuidamos tu estructura dental desde el primer día. En los tratamientos con resina de alta estética no hay desgaste. En porcelana y cerómero, la preparación es mínima y siempre planificada para preservar la mayor cantidad de diente natural posible.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    ¿Cuánto dura el resultado?
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>Depende del material. Las carillas de porcelana superan los 15 años con el cuidado adecuado, sin mancharse ni fracturarse. El cerómero tiene una duración aproximada de 5 a 8 años. Las resinas de alta estética requieren mantenimiento periódico para conservar su brillo. En todos los casos, la higiene y los controles influyen directamente en la duración.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    ¿Cuánto cuesta y cómo funciona la financiación?
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>Los diseños de sonrisa inician desde $1.700.000 y el valor final depende del material, la cantidad de dientes y el nivel de intervención. Trabajamos con Addi y Meddipay, que te permiten diferir el pago a cuotas con aprobación rápida y en línea. En tu valoración te entregamos un presupuesto exacto y sin compromiso.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    ¿Atienden sin cita previa?
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>No. Atendemos únicamente con cita previa, tanto en Medellín como en Bogotá. Esto nos permite dedicarle a cada paciente el tiempo que su caso merece. Puedes agendar escribiéndonos por WhatsApp.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button">
+                    ¿Qué incluye la valoración virtual gratuita?
+                    <span class="faq-icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>La valoración virtual es sin costo y sin compromiso. Evaluamos el estado de tus dientes, analizamos la proporción de tu rostro y tu línea de sonrisa, y te explicamos qué opciones de tratamiento se ajustan a lo que buscas. Al final recibes un plan personalizado con el presupuesto exacto.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="faq-cta">¿Tienes otra pregunta? <a href="#" onclick="openModal();return false;">Escríbenos y te respondemos</a></p>
+    </section>
+
     <!-- CONTACTO -->
     <section class="contact-section" id="contacto">
         <div class="section-tag">Encuéntranos</div>
@@ -2394,6 +2585,27 @@ document.querySelectorAll('.card-cs').forEach(slider => {
                 hamburger.classList.remove('open');
                 mobileMenu.classList.remove('open');
                 document.body.style.overflow = '';
+            });
+        });
+
+        // FAQ acordeón
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const abierto = item.classList.contains('open');
+
+                // Cierra todas
+                document.querySelectorAll('.faq-item').forEach(otro => {
+                    otro.classList.remove('open');
+                    otro.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                // Abre la que se hizo clic, si estaba cerrada
+                if (!abierto) {
+                    item.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
             });
         });
     </script>
