@@ -70,6 +70,55 @@
             --border: rgba(212, 175, 55, 0.18);
         }
 
+        /* ===== FRANJA DE SELLOS ===== */
+        .trust-bar {
+            margin-top: 76px;
+            background: #0d0d0d;
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+        }
+
+        .trust-track {
+            display: flex;
+            width: max-content;
+            animation: trust-scroll 38s linear infinite;
+        }
+
+        .trust-bar:hover .trust-track { animation-play-state: paused; }
+
+        .trust-group {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .trust-item {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            white-space: nowrap;
+            padding: 13px 0;
+        }
+
+        .trust-sep {
+            color: rgba(212, 175, 55, 0.35);
+            padding: 0 24px;
+            font-size: 11px;
+        }
+
+        @keyframes trust-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .trust-track { animation: none; }
+        }
+
         /* ===== NAVBAR ===== */
         nav {
             position: fixed;
@@ -146,13 +195,13 @@
 
         /* ===== HERO ===== */
         .hero {
-            min-height: 100vh;
+            min-height: calc(100vh - 114px);
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 60px;
             position: relative;
-            padding: 120px 10% 80px;
+            padding: 56px 10% 80px;
             overflow: hidden;
             background: #080808;
         }
@@ -1483,11 +1532,15 @@
 
             /* HERO */
             .hero {
-                padding: 90px 6% 60px;
+                padding: 36px 6% 60px;
                 flex-direction: column;
                 justify-content: flex-start;
                 min-height: auto;
             }
+
+            /* FRANJA DE SELLOS */
+            .trust-item { font-size: 9.5px; letter-spacing: 2px; padding: 11px 0; }
+            .trust-sep { padding: 0 14px; font-size: 9.5px; }
             .hero-content { max-width: 100%; flex-shrink: 1; }
             .hero-eyebrow span { font-size: 9px; letter-spacing: 2px; }
             .hero h1 { font-size: clamp(36px, 9vw, 56px); }
@@ -1633,6 +1686,26 @@
     </div>
 
     <!-- HERO -->
+    <!-- FRANJA DE SELLOS -->
+    <div class="trust-bar">
+        <div class="trust-track">
+            <div class="trust-group">
+                <span class="trust-item">Valoración virtual gratuita</span><span class="trust-sep">&middot;</span>
+                <span class="trust-item">Sin dolor</span><span class="trust-sep">&middot;</span>
+                <span class="trust-item">Sin desgaste</span><span class="trust-sep">&middot;</span>
+                <span class="trust-item">Resultado el mismo día</span><span class="trust-sep">&middot;</span>
+                <span class="trust-item">Financiación disponible</span><span class="trust-sep">&middot;</span>
+            </div>
+            <div class="trust-group" aria-hidden="true">
+                <span class="trust-item">Valoración virtual gratuita</span><span class="trust-sep">&middot;</span>
+                <span class="trust-item">Sin dolor</span><span class="trust-sep">&middot;</span>
+                <span class="trust-item">Sin desgaste</span><span class="trust-sep">&middot;</span>
+                <span class="trust-item">Resultado el mismo día</span><span class="trust-sep">&middot;</span>
+                <span class="trust-item">Financiación disponible</span><span class="trust-sep">&middot;</span>
+            </div>
+        </div>
+    </div>
+
     <section class="hero">
         <div class="hero-glow"></div>
         <div class="hero-glow2"></div>
