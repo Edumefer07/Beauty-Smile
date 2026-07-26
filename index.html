@@ -57,7 +57,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 116px; }
         body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
 
         :root {
@@ -72,8 +72,15 @@
 
         /* ===== FRANJA DE SELLOS ===== */
         .trust-bar {
-            margin-top: 76px;
-            background: #0d0d0d;
+            position: fixed;
+            top: 76px;
+            left: 0; right: 0;
+            z-index: 150;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            background: rgba(13, 13, 13, 0.97);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             overflow: hidden;
             -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
@@ -82,6 +89,7 @@
 
         .trust-track {
             display: flex;
+            align-items: center;
             width: max-content;
             animation: trust-scroll 38s linear infinite;
         }
@@ -101,7 +109,7 @@
             text-transform: uppercase;
             color: var(--gold);
             white-space: nowrap;
-            padding: 13px 0;
+            line-height: 1;
         }
 
         .trust-sep {
@@ -195,13 +203,13 @@
 
         /* ===== HERO ===== */
         .hero {
-            min-height: calc(100vh - 114px);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 60px;
             position: relative;
-            padding: 56px 10% 80px;
+            padding: 160px 10% 80px;
             overflow: hidden;
             background: #080808;
         }
@@ -1532,14 +1540,16 @@
 
             /* HERO */
             .hero {
-                padding: 36px 6% 60px;
+                padding: 122px 6% 60px;
                 flex-direction: column;
                 justify-content: flex-start;
                 min-height: auto;
             }
 
             /* FRANJA DE SELLOS */
-            .trust-item { font-size: 9.5px; letter-spacing: 2px; padding: 11px 0; }
+            html { scroll-padding-top: 108px; }
+            .trust-bar { height: 32px; }
+            .trust-item { font-size: 9.5px; letter-spacing: 2px; }
             .trust-sep { padding: 0 14px; font-size: 9.5px; }
             .hero-content { max-width: 100%; flex-shrink: 1; }
             .hero-eyebrow span { font-size: 9px; letter-spacing: 2px; }
